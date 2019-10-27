@@ -1,0 +1,12 @@
+.panel {
+    display: flex;
+    height: 85px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    & button {
+        width: 49%;
+    }
+}
