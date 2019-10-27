@@ -1,0 +1,19 @@
+.item {
+    padding: 10px;
+    background: #a5a5a569;
+    flex: 0 1 calc(100% / 3 - 10px);
+    margin: 5px;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        & span {
+            color: #009D91;
+        }
+    }
+
+    &__attributes {
+        padding: 10px 0 10px 20px;
+    }
+
+}

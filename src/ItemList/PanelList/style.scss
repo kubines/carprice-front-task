@@ -1,0 +1,24 @@
+.panel-list {
+    display: flex;
+    margin-top: 15px;
+    padding: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #a5a5a569;
+    border-bottom: 1px solid #a5a5a569;
+
+    &__change-view {
+        display: flex;
+        width: 70px;
+        justify-content: space-between;
+
+        &__icon {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+            &_active {
+                background: #33CEC3;
+            }
+        }
+    }
+}
