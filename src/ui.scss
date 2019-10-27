@@ -1,0 +1,28 @@
+button {
+    padding: 10px;
+    background: #33CEC3;
+    color: #FFF;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    &:hover {
+        background: #009D91;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+h2 {
+    font-size: 18px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #33CEC3;
+    &:focus {
+        outline: none;
+    }
+}
