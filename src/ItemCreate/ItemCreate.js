@@ -37,9 +37,7 @@ const ItemCreate = () => {
             <h4>
                 Добавить новый объект
             </h4>
-            <label
-                for='title'
-            >
+            <label>
                 Заголовок*
             </label>
             <input
@@ -49,14 +47,15 @@ const ItemCreate = () => {
                 value={item.title}
                 onChange={e => setItem({ ...item, title: e.target.value })}
             />
-            <label
-                for='attribute'
-                onClick={() => setItem({ ...item, attributes: [...item.attributes, ''] })}
-                style={{
-                    cursor: 'pointer'
-                }}
-            >
-                Добавить пункт
+            <label>
+                <span
+                    onClick={() => setItem({ ...item, attributes: [...item.attributes, ''] })}
+                    style={{
+                        cursor: 'pointer'
+                    }}
+                >
+                    Добавить пункт
+                </span>
             </label>
             {
                 item.attributes.map((attr, i) =>
@@ -69,9 +68,7 @@ const ItemCreate = () => {
                     />
                 )
             }
-            <label
-                for='description'
-            >
+            <label>
                 Описание
             </label>
             <input
