@@ -12,16 +12,21 @@ const PanelList = ({ cartView, setCartView }) => {
                 className='panel-list__change-view'
             >
                 <span
-                    className={`panel-list__change-view__icon ${cartView ? '' : 'panel-list__change-view__icon_active'}`}
+                    className={`panel-list__change-view__icon-1 ${cartView ? '' : 'panel-list__change-view__icon-1_active'}`}
                     onClick={() => setCartView(false)}
                 >
-                    L
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </span>
                 <span
-                    className={`panel-list__change-view__icon ${cartView ? 'panel-list__change-view__icon_active' : ''}`}
+                    className={`panel-list__change-view__icon-2 ${cartView ? 'panel-list__change-view__icon-2_active' : ''}`}
                     onClick={() => setCartView(true)}
                 >
-                    C
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </span>
             </div>
         </div>
