@@ -2,4 +2,4 @@
 # ветка master
 Сделано через useContext, useReducer
 # ветка redux
-Сделано через reudx, react-redux
+Сделано через redux, react-redux
