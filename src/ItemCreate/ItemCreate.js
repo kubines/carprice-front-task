@@ -1,11 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 
-import State from 'State'
+import { itemCreate } from 'actions'
+
 
 import './style.scss'
 
-const ItemCreate = () => {
-    const { itemCreate } = useContext(State)
+const ItemCreate = ({ itemCreate }) => {
     const initItem = {
         title: '',
         attributes: [''],
@@ -84,4 +85,13 @@ const ItemCreate = () => {
     )
 }
 
-export default ItemCreate
+const mapDispatchToProps = dispatch => {
+    return {
+        itemCreate: item => dispatch(itemCreate(item)),
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(ItemCreate)

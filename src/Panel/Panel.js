@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 
-import State from 'State'
+import { itemFirstCopy, itemFirstDelete, itemLastCopy, itemLastDelete } from 'actions'
 
 import './style.scss'
 
-const Panel = () => {
-    const { itemFirstCopy, itemFirstDelete, itemLastCopy, itemLastDelete } = useContext(State)
-
+const Panel = ({ itemFirstCopy, itemFirstDelete, itemLastCopy, itemLastDelete }) => {
     return (
         <div className='panel'>
             <button
@@ -37,4 +36,16 @@ const Panel = () => {
     )
 }
 
-export default Panel
+const mapDispatchToProps = dispatch => {
+    return {
+        itemFirstCopy: () => dispatch(itemFirstCopy()),
+        itemFirstDelete: () => dispatch(itemFirstDelete()),
+        itemLastCopy: () => dispatch(itemLastCopy()),
+        itemLastDelete: () => dispatch(itemLastDelete()),
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps,
+)(Panel)

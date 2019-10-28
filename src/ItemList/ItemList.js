@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react'
-
-import State from 'State'
+import React, { useState} from 'react'
+import { useSelector } from 'react-redux'
 
 import PanelList from './PanelList'
 import Item from './Item'
@@ -8,7 +7,7 @@ import Item from './Item'
 import './style.scss'
 
 const ItemList = () => {
-    const { state: { data } } = useContext(State)
+    const data = useSelector(state => state.data)
     const [cartView, setCartView] = useState(true)
 
     return (
