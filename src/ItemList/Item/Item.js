@@ -1,22 +1,22 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import './style.scss'
 
-const Item = ({ cartView, index, title, attributes, description }) => {
+const Item = memo(({ cartView, index, title, attributes, description }) => {
     return (
         <div
-            className='item'
+            className={`item ${cartView ? 'item_cart' : 'item_column'}`}
         >
-            <div className='item_container'>
-                <div className='item__title'>
+            <div className={`item__content ${cartView ? 'item__content_cart' : 'item__content_column'}`}>
+                <div className={`item__content__title ${cartView ? 'item__content__title_cart' : 'item__content__title_column'}`}>
                     <h4>
                         {title}
                     </h4>
                     <span>
-                        {index}
+                        {index + 1}
                     </span>
                 </div>
-                <div className='item__attributes'>
+                <div className={`item__content__attributes ${cartView ? 'item__content__attributes_cart' : 'item__content__attributes_column'}`}>
                     {
                         attributes.map((attribute, i) =>
                             <p
@@ -28,11 +28,11 @@ const Item = ({ cartView, index, title, attributes, description }) => {
                     }
                 </div>
             </div>
-            <div className='item__description'>
+            <p className='item__description'>
                 {description}
-            </div>
+            </p>
         </div>
     )
-}
+})
 
 export default Item

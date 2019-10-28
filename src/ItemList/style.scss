@@ -1,12 +1,12 @@
 .list {
     display: flex;
     margin-top: 15px;
-    margin-left: -5px;
-    margin-right: -5px;
 }
 
 .list_cart {
     flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .list_column {
