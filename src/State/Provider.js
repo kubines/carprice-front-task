@@ -9,13 +9,13 @@ const Provider = ({ children }) => {
 
     const itemCreate = item => dispatch({ type: 'ITEM_CREATE', item: item })
 
-    const itemFirstCopy = () => dispatch({ type: 'ITEM_FIRST_COPY' })
+    const itemFirstCopy = () => state.data.length > 0 && dispatch({ type: 'ITEM_FIRST_COPY' })
 
-    const itemFirstDelete = () => dispatch({ type: 'ITEM_FIRST_DELETE' })
+    const itemFirstDelete = () => state.data.length > 0 && dispatch({ type: 'ITEM_FIRST_DELETE' })
 
-    const itemLastCopy = () => dispatch({ type: 'ITEM_LAST_COPY' })
+    const itemLastCopy = () => state.data.length > 0 && dispatch({ type: 'ITEM_LAST_COPY' })
 
-    const itemLastDelete = () => dispatch({ type: 'ITEM_LAST_DELETE' })
+    const itemLastDelete = () => state.data.length > 0 && dispatch({ type: 'ITEM_LAST_DELETE' })
 
     return (
         <State.Provider
