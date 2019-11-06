@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useCallback } from 'react'
 
 import State from 'State'
 
@@ -11,11 +11,20 @@ const ItemList = () => {
     const { state: { data } } = useContext(State)
     const [cartView, setCartView] = useState(true)
 
+    const showCart = useCallback(() => {
+        setCartView(true)
+    }, [setCartView])
+
+    const showColumn = useCallback(() => {
+        setCartView(false)
+    }, [setCartView])
+
     return (
         <React.Fragment>
             <PanelList
                 cartView={cartView}
-                setCartView={setCartView}
+                showCart={showCart}
+                showColumn={showColumn}
             />
             <div className={`list ${cartView ? 'list_cart' : 'list_column'}`}>
                 {

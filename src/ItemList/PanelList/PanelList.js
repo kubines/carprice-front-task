@@ -2,7 +2,7 @@ import React from 'react'
 
 import './style.scss'
 
-const PanelList = ({ cartView, setCartView }) => {
+const PanelList = ({ cartView, showCart, showColumn }) => {
     return (
         <div className='panel-list'>
             <h2>
@@ -13,7 +13,7 @@ const PanelList = ({ cartView, setCartView }) => {
             >
                 <span
                     className={`panel-list__change-view__icon-1 ${cartView ? '' : 'panel-list__change-view__icon-1_active'}`}
-                    onClick={() => setCartView(false)}
+                    onClick={showColumn}
                 >
                     <span></span>
                     <span></span>
@@ -21,7 +21,7 @@ const PanelList = ({ cartView, setCartView }) => {
                 </span>
                 <span
                     className={`panel-list__change-view__icon-2 ${cartView ? 'panel-list__change-view__icon-2_active' : ''}`}
-                    onClick={() => setCartView(true)}
+                    onClick={showCart}
                 >
                     <div>
                         <span></span>
